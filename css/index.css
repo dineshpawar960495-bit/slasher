@@ -1,0 +1,121 @@
+:root {
+    --bg-color: #020617;
+    --accent-color: #8b5cf6;
+    --text-primary: #ffffff;
+    --text-secondary: #94a3b8;
+    --glass-bg: rgba(30, 41, 59, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Background Mesh Gradient Effect */
+body::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: var(--accent-color);
+    filter: blur(150px);
+    opacity: 0.15;
+    top: 10%;
+    left: 10%;
+    z-index: -1;
+}
+
+#splash-screen {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.glass-container {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px 30px;
+    border-radius: 32px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.logo-wrapper {
+    display: inline-flex;
+    padding: 15px;
+    background: linear-gradient(135deg, var(--accent-color), #6366f1);
+    border-radius: 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
+}
+
+.logo-icon svg {
+    width: 35px;
+    height: 35px;
+    color: white;
+}
+
+.brand-name {
+    color: var(--text-primary);
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 30px;
+}
+
+.brand-name span {
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+/* Loader Styling */
+.loader-box {
+    margin-top: 20px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+#progress-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--accent-color);
+    border-radius: 10px;
+    transition: width 0.4s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+    box-shadow: 0 0 15px var(--accent-color);
+}
+
+#status-text {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.footer-note {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    color: rgba(148, 163, 184, 0.4);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
